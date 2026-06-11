@@ -19,3 +19,14 @@ ps = PorterStemmer()
 
 for word in words:
     print(f"{word} --> {ps.stem(word)}")
+
+
+'''
+RegexStemmer Class : using this we can implement regular expression during stemming process
+'''
+from nltk.stem import RegexpStemmer
+
+reg_stem = RegexpStemmer('ing$|s$|e$|able$',4)
+# $ is wildcharacter so here for ing$, means remove ing that occurs in the end.
+
+print(reg_stem.stem('eating'))
